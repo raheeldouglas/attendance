@@ -61,7 +61,7 @@ use LDAP\Result;
         }
         public function getAttendees(){
             try{
-                $sql = "SELECT * FROM `attendee` a inner join specialty s on a.specialty_id = s.specialty_id";
+                $sql = "SELECT * FROM `attendee` a inner join specialties s on a.specialty_id = s.specialty_id";
             $result = $this->db->query($sql);
             return $result;
             }catch (PDOException $e) {
