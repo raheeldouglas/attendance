@@ -9,7 +9,7 @@
       $lname = $_POST['lastname'];
       $dob = $_POST['dob'];
       $specialty = $_POST['specialty'];
-      $email = $_POST['email'];
+      $email = $_POST["email"];
       $contact = $_POST['phone'];
       
       //call function to insert and track if success or not
