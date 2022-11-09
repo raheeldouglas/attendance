@@ -14,7 +14,9 @@
             <th>#</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Specialization</th>
+            <th>Date Of Birth<th>
+            <th>Email Address<th>
+            <th>Contact Number</th>
             <th>Actions</th>
         </tr>  
        <!--
