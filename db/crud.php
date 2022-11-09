@@ -36,10 +36,10 @@ use LDAP\Result;
             }
         } 
 
-        public function editAttendee($id, $fname, $lname, $dob, $email, $phone, $specialization){
+        public function editAttendee($id, $fname, $lname, $dob, $email, $phone, $specialty){
             try{
                 $sql = "UPDATE `attendee` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,
-                `emailaddress`=:email,`contactnumber`=:contact,`specialization_id`=:specialization 
+                `emailaddress`=:email,`contactnumber`=:contact,`specialty_id`=:specialty 
                 WHERE attendee_id = :id";
                 $stmt = $this->db->prepare($sql);
                 // bind all placeholders to the actual values
@@ -49,7 +49,7 @@ use LDAP\Result;
                 $stmt->bindparam(':dob',$dob);
                 $stmt->bindparam(':email',$email);
                 $stmt->bindparam(':contact',$phone);
-                $stmt->bindparam(':specialization',$specialization);
+                $stmt->bindparam(':specialty',$specialty);
                 // excute statement
                 $stmt->execute();
                 return true;
@@ -61,7 +61,7 @@ use LDAP\Result;
         }
         public function getAttendees(){
             try{
-                $sql = "SELECT * FROM `attendee` a inner join specializations s on a.specialization_id = s.specialization_id";
+                $sql = "SELECT * FROM `attendee` a inner join specialty s on a.specialty_id = s.specialty_id";
             $result = $this->db->query($sql);
             return $result;
             }catch (PDOException $e) {
@@ -73,8 +73,8 @@ use LDAP\Result;
 
         public function getAttendeeDetails($id){
             try{
-                $sql = "select * from attendee a inner join specializations s on a.specialization_id 
-                = s.specialization_id where attendee_id = :id";
+                $sql = "select * from attendee a inner join specialty s on a.specialty_id 
+                = s.specialty_id where attendee_id = :id";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindparam(':id', $id);
                 $stmt->execute();
