@@ -2,7 +2,7 @@
     $title = 'Success';
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
-
+    
     if(isset($_POST['submit'])){
       //extract values from the $_POST array  
       $fname = $_POST['firstname'];
@@ -20,7 +20,7 @@
       }
       else{
         include 'includes/errormessage.php';
-        header("Location: viewrecords.php");
+        //header("Location: viewrecords.php");
       }
 
     }

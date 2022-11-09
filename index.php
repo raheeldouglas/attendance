@@ -13,7 +13,7 @@ $title = 'index';
 -->
     <h1 class="text-center">Registration For IT Conference</h1>
 
-    <form method="get" action="success.php">
+    <form method="post" action="success.php">
     
     <div class="mb-3">
             <label for="firstname"> First Name</label>
