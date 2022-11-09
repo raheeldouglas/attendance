@@ -101,7 +101,7 @@ use LDAP\Result;
 
         public function getSpecialties(){
             try{
-                $sql = "SELECT * FROM `specializations`;";
+                $sql = "SELECT * FROM `specialties`;";
                 $result = $this->db->query($sql);
                 return $result;
             }catch (PDOException $e) {
