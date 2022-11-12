@@ -1,6 +1,7 @@
 <?php 
     $title = 'View Record';
     require_once 'includes/header.php'; 
+    require_once 'includes/auth_check.php';
     require_once 'db/conn.php';
 
     // Get attendees by id
@@ -11,6 +12,8 @@
         $result = $crud->getAttendeeDetails($id); 
        
 ?>
+    <img src="<?php echo empty($result['avatar_path']) ?"uploads/blank.png" : $result['avatar_path']; ?>" 
+     class="rounded-circle" alt="..." style="width: 15%; height: 10%;" />
     <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">
