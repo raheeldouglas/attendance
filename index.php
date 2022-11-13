@@ -56,6 +56,12 @@ $title = 'index';
             <small id="emailHelp" class="form-text">We'll never share your
             phone contact with anyone else.</small>
         </div>
+        <br>
+        <div class="mb-3">
+            <input type="file" accept="image/*" class="form-control" id="avatar" name="avatar" >
+            <small id="avatar" class="form-text text-danger">File Upload is Optional</small>
+
+        </div>
         
         <div class="d-grid gap-2">
         <button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
