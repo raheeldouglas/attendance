@@ -102,11 +102,8 @@
 
         public function getSpecialties(){
             try{
-                $sql = "SELECT * FROM `specialties` where specialty_id = :id";
+                $sql = "SELECT * FROM `specialties`;";
                 $result = $this->db->query($sql);
-                $stmt->bindparam(':id', $id);
-                $stmt->execute();
-                $result = $stmt->fetch();
                 return $result;
             }catch (PDOException $e) {
                 echo $e->getMessage();
