@@ -37,7 +37,7 @@
                 <td><?php echo $r['attendee_id'] ?></td>
                 <td><?php echo $r['firstname'] ?></td>
                 <td><?php echo $r['lastname'] ?></td>
-           <!-- <td><?php echo $r['dateofbirth'] ?></td>
+             <!-- <td><?php echo $r['dateofbirth'] ?></td>
                 <td><?php echo $r['emailaddress'] ?></td>
                 <td><?php echo $r['contactnumber'] ?></td> 
                 <td><?php echo $r['specialty_id'] ?></td>-->
