@@ -22,9 +22,11 @@
         move_uploaded_file($orig_file,$destination);
       
       //call function to insert and track if success or not
-      $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty);
-      
+      $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty,$destination);
+      $specialtyName = $crud->getSpecialtyById($specialty);
+
       if($isSuccess){
+        SendEmail::SendMail($email, 'Welcome to IT Conference 2022', 'You have successfully registerted for this year\'s IT Conference');
         include 'includes/successmessage.php';
       }
       else{
@@ -63,38 +65,32 @@
         </div>
     </div> -->
 
-    <img src="<?php echo $destination; ?>" class="rounded-circle" alt="..." style="width: 15%; height 20%;" />
-
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
+    <img src="<?php echo $destination; ?>" class="rounded-circle" alt="..." style="width: 20%; height 20%;" />
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
             <h5 class="card-title">
-                    <?php echo $_POST['firstname'] .  '  ' . $_POST['lastname'];?>
+                <?php echo $_POST['firstname'] . ' ' . $_POST['lastname'];  ?>
             </h5>
-
             <h6 class="card-subtitle mb-2 text-muted">
-                    <?php echo $_POST['specialty'];?>
+                <?php echo $specialtyName['name'];  ?>    
             </h6>
-
             <p class="card-text">
-                    Date of Birth: <?php echo $_POST['dob'];?>
+                Date Of Birth: <?php echo $_POST['dob'];  ?>
             </p>
-
             <p class="card-text">
-                    Contact Number: <?php echo $_POST['phone'];?>
+                Contact Number: <?php echo $_POST['phone'];  ?>
             </p>
-
             <p class="card-text">
-                    Email Address: <?php echo $_POST['email'];?>
+                Email Address: <?php echo $_POST['email'];  ?>
             </p>
-
-            </div>
+    
         </div>
     
     <!--<?php
         //echo $_POST['firstname'];
         //echo $_POST['lastname'];
-        //echo $_POST['dob'];
         //echo $_POST['specialty'];
+        //echo $_POST['dob'];
         //echo $_POST['phone'];
         //echo $_POST['email'];
     
