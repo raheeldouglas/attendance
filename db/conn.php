@@ -8,12 +8,12 @@
     $charset = 'utf8mb4';
 
 
-    // FOR HOSTING (Remote Connection)
-    // $host = 'applied-web.mysql.database.azure.com';
-    // $db = 'attendee_raheel';
-    // $user ='appliedweb_user@applied-web';
-    // $pass = 'P@ssword1';
-    // $charset = 'utf8mb4';
+    // FOR HOSTING  MYSQL (Remote Connection)
+        $host = 'applied-web.mysql.database.azure.com';
+        $db = 'attendee_raheel';
+        $user ='appliedweb_user@applied-web';
+        $pass = 'P@ssword1';
+        $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
