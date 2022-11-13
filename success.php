@@ -22,11 +22,9 @@
         move_uploaded_file($orig_file,$destination);
       
       //call function to insert and track if success or not
-      $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty,);
-      $specialtyName = $crud->getSpecialtyById($specialty);
-
+      $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty);
+      
       if($isSuccess){
-        SendEmail::SendMail($email, 'Welcome to IT Conference 2022', 'You have successfully registerted for this year\'s IT Conference');
         include 'includes/successmessage.php';
       }
       else{
